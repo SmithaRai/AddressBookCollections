@@ -15,6 +15,24 @@ public class NewContact {
 	   private int zip;
 	    
 	    static Scanner input = new Scanner(System.in);
+	    
+	    public NewContact() {
+			// TODO Auto-generated constructor stub
+		}
+	    
+	    public  NewContact(String firstName, String lastName, long phoneNumber,
+	            String emailId, String address, String city, String state, int zip) {
+	    	
+	          this.firstName = firstName;
+	          this.lastName = lastName;
+	          this.phoneNumber = phoneNumber;
+	          this.emailId = emailId;
+	          this.address = address;
+	          this.city = city;
+	          this.state = state;
+	          this.zip = zip;
+	       
+	       }
 
 	    public String getFirstName() {
 			return firstName;
@@ -24,7 +42,6 @@ public class NewContact {
 	    }
 	    
 
-	    
 
 	    public String getLastName() {
 			return lastName;

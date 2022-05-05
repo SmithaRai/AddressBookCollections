@@ -1,16 +1,29 @@
 package collections;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 
 public class MultipleAddressBook {
 	
 	private String name;
 	
+	public MultipleAddressBook() {
+		// TODO Auto-generated constructor stub
+	}
+	public MultipleAddressBook(String name) {
+		// TODO Auto-generated constructor stub
+		this.name = name ;
+	}
 	 
 		public String getName() {
 		    return name;
 	       }
+		
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return ("name : "+name);
+		}
 
 	public void setName(String name) {
 		this.name = name;
@@ -18,39 +31,33 @@ public class MultipleAddressBook {
 
 		static char ch = 'y';
 		static int index = 0;
-		 static ArrayList<MultipleAddressBook> AddressbookList = new ArrayList<>();
+		 static HashSet<MultipleAddressBook> AddressbookList = new HashSet<>();
+		 MultipleAddressBook book = new MultipleAddressBook();
 		 
 		 static Scanner input = new Scanner(System.in);
-		 static int i = 0 ;
 		 public static void getaddressbooklist()
 		 {
-			 
-		   MultipleAddressBook addressbook = new MultipleAddressBook();
-
 		        do {
 		    
 		              System.out.println("Enter Addressbook name: ");
-		               addressbook.setName(input.next());
+		              String name = input.next();
 		               
-		               AddressbookList.add(addressbook);
-		               i++;
-		               index = i ;
-		        	 
-		                System.out.println();
+		              AddressbookList.add(new MultipleAddressBook(name));
+		               System.out.println(" ");
                            
-		                System.out.println("enter y to add new addressbook names : ");
-		               ch = input.next().charAt(0);
+		              System.out.println("enter y to add new addressbook names : ");
+		              ch = input.next().charAt(0);
 		        	 	       
 		            }while(ch=='y');
-		     
 		 }
 		 
 		 public static void displayaddressbook()
 		 {
-			 for  ( index = 0 ; index < AddressbookList.size(); index ++ )
-			 {
-	             System.out.println("ADDRESS BOOK NAME : "+AddressbookList.get(index).getName());
-			 }
+			Iterator<MultipleAddressBook> iterate = AddressbookList.iterator();
+			while(iterate.hasNext())
+			{
+				System.out.println(iterate.next().getName());
+			}
 		 }
 		 
 	public static void main(String[] args) {

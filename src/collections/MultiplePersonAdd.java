@@ -13,32 +13,36 @@ public class MultiplePersonAdd {
 		 
 	        NewContact person = new NewContact();
 
+	      //  System.out.println("enter no.of entries to entered :");
+	       // int n = input.nextInt();
+	        
 	        do {
 	        System.out.println("Enter person first name: ");
-	        person.setFirstName(input.next());
+	        String firstName = input.next();
 
 	        System.out.println("Enter person last name: ");
-	        person.setLastName(input.next());
+	        String lastName = input.next();
 
 	        System.out.println("Enter mobile number: ");
-	        person.setPhoneNumber(input.nextLong());
+	        long phoneNumber = input.nextLong();
 
 	        System.out.println("Enter the Email id: ");
-	        person.setEmailId(input.next());
+	        String emailId = input.next();
 
 	        System.out.println("Enter address: ");
-	        person.setAddress(input.next());
+	        String address = input.next();
 
 	        System.out.println("Enter city: ");
-	        person.setCity(input.next());
+	        String  city = input.next();
 
 	        System.out.println("Enter State name: ");
-	        person.setState(input.next());
+	        String state = input.next();
 
 	        System.out.println("Enter zip: ");
-	        person.setZips(input.nextInt());
+	        int zip = input.nextInt();
 
-	        contactList.add(person);
+	        contactList.add(new NewContact(firstName,lastName ,phoneNumber,emailId ,address ,city,state,zip));
+	        
 	        System.out.println();
 	        System.out.println("contact added");
 	       
